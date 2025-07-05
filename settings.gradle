@@ -1,0 +1,11 @@
+rootProject.name = 'ticketing-msa'
+
+include 'common'
+include 'book-service'
+include 'stock-service'
+include 'ticket-service'
+
+project(':common').projectDir = file('common')
+project(':book-service').projectDir = file('book-service')
+project(':stock-service').projectDir = file('stock-service')
+project(':ticket-service').projectDir = file('ticket-service')
