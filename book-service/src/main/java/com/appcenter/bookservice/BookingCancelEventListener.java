@@ -32,7 +32,7 @@ public class BookingCancelEventListener {
                                 .bookingId(booking.getBookingId())
                                 .username(booking.getUsername())
                                 .ticketId(booking.getTicketId())
-                                .status(BookingStatus.CANCELLED)
+                                .status(BookingStatus.CANCELED)
                                 .build();
         bookingRepository.save(update);
         log.info("예약 취소 저장");

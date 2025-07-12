@@ -32,12 +32,12 @@ public class BookingEventListener {
         if (event != null) {
             // 1. 티켓 재고 조회
             Stock stock = stockRepository.findByTicketIdForUpdate(event.getTicketId())
-            .orElseThrow(() -> new RuntimeException("티켓 재고 없음"));
+                    .orElseThrow(() -> new RuntimeException("티켓 재고 없음"));
 
             // 2. 티켓 재고 0 이하 여부 확인
             if (stock.getQuantity() <= 0) {
                 kafkaTemplate.send("reservation.cancel", new BookingCancelEvent(
-                        event.getReservationId(), BookingStatus.CANCELLED
+                        event.getReservationId(), BookingStatus.CANCELED
                 ));
                 log.info("[Kafka] 재고 없으므로 예약 취소 : {}", event.getReservationId());
                 return;

@@ -13,7 +13,7 @@ public enum SuccessCode {
     NO_CONTENT(200, "검색된 결과가 없습니다."),
 
     // BOOKING
-    CREATE_BOOKING(201, "예매가 정상적으로 완료되었습니다.")
+    CREATE_BOOKING(201, "예매 요청이 정상적으로 완료되었습니다.")
     ;
 
     private final Integer code;
