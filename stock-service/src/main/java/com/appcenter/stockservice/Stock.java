@@ -15,8 +15,10 @@ public class Stock extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long ticketStockId;
 
+    @Column(nullable = false)
     private int quantity;
 
+    @Column(nullable = false)
     private Long ticketId;
 
     // 티켓 수량 감소

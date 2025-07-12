@@ -1,5 +1,6 @@
-package com.appcenter.bookservice.event;
+package com.appcenter.study.common.event;
 
+import com.appcenter.study.common.enums.BookingStatus;
 import lombok.*;
 
 @Getter
@@ -10,4 +11,5 @@ public class BookingCreatedEvent {
     private Long reservationId;
     private Long ticketId;
     private String username;
+    private BookingStatus bookingStatus;
 }

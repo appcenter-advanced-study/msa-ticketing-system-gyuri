@@ -13,6 +13,7 @@ public class EventUtil {
             objectMapper.registerModule(new JavaTimeModule());
             return objectMapper.readValue(message, classType);
         } catch (JsonProcessingException e) {
+            log.error("Kafka 메시지 역직렬화 실패", e);
             return null;
         }
     }

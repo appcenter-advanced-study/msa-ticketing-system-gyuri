@@ -1,6 +1,7 @@
 package com.appcenter.bookservice;
 
 import com.appcenter.study.common.BaseEntity;
+import com.appcenter.study.common.enums.BookingStatus;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -15,7 +16,13 @@ public class Booking extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long bookingId;
 
+    @Column(nullable = false)
     private String username;
 
+    @Column(nullable = false)
     private Long ticketId;
+
+    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
+    private BookingStatus status;
 }
